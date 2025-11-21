@@ -1,5 +1,6 @@
 // src/App.jsx
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -18,55 +19,55 @@ const staggerContainer = {
 const sections = {
   applications: [
     {
-      title: "Emotional Journals",
-      desc: "Track emotions, triggers and automatic thoughts in structured CBT-inspired journals.",
-      tag: "CBT",
+      title: "Jurnalul emoțiilor",
+      desc: "Notezi emoțiile, situațiile declanșatoare și gândurile automate, într-un format structurat, inspirat din CBT.",
+      tag: "Psihoterapie CBT",
     },
     {
-      title: "Automatic Thoughts Tracker",
-      desc: "Identify, label and reframe cognitive distortions with guided prompts.",
-      tag: "Cognitive Restructuring",
+      title: "Monitorizarea gândurilor automate",
+      desc: "Identifici și etichetezi distorsiunile cognitive și exersezi alternative mai realiste și mai blânde.",
+      tag: "Restructurare cognitivă",
     },
     {
-      title: "Nutrition Diary",
-      desc: "Combine food logs with mood tracking to see the link between nutrition and emotions.",
-      tag: "Psycho-nutrition",
+      title: "Jurnal de nutriție & stare",
+      desc: "Înregistrezi mesele împreună cu emoțiile, pentru a înțelege legătura dintre alimentație și starea ta psihică.",
+      tag: "Psihonutriție",
     },
     {
-      title: "Mini Games",
-      desc: "Educational games for kids and adults to learn emotions, habits and self-awareness.",
-      tag: "Gamified Learning",
+      title: "Mini-jocuri și exerciții",
+      desc: "Jocuri educative pentru copii și adulți, pentru învățarea emoțiilor, obiceiurilor sănătoase și autocunoașterii.",
+      tag: "Învață jucându-te",
     },
   ],
   tutorials: [
     {
-      level: "Beginner",
-      title: "Foundations of CBT for Everyday Life",
-      desc: "Interactive lessons about thoughts, emotions and behaviors with simple exercises.",
+      level: "Începători",
+      title: "Înțelege-ți mintea și emoțiile",
+      desc: "Lecții interactive despre gânduri, emoții și comportamente, cu exerciții simple pe care le poți aplica imediat.",
     },
     {
-      level: "Intermediate",
-      title: "Building Healthy Habits with Food",
-      desc: "Step-by-step psycho-nutritional modules to improve your relationship with eating.",
+      level: "Intermediar",
+      title: "Relația cu mâncarea și corpul",
+      desc: "Module psihonutriționale pas cu pas, pentru a reduce mâncatul emoțional și a construi obiceiuri mai sănătoase.",
     },
     {
-      level: "Advanced",
-      title: "Psychology & Nutrition Integrated Programs",
-      desc: "Structured paths that combine emotional work, lifestyle changes and self-monitoring.",
+      level: "Avansat",
+      title: "Programe integrate minte–corp",
+      desc: "Trasee structurate care combină lucrul emoțional, schimbarea stilului de viață și auto-monitorizarea.",
     },
   ],
   professionals: [
     {
-      title: "Custom Platforms for Psychologists",
-      desc: "I design and develop interactive websites with CBT tools, journals and quizzes for your clients.",
+      title: "Platforme personalizate pentru psihologi",
+      desc: "Concep și dezvolt website-uri interactive cu jurnale CBT, teste, quiz-uri și resurse educative pentru clienții tăi.",
     },
     {
-      title: "Tools for Nutritionists",
-      desc: "Nutrition journals, progress dashboards and psycho-educational content tailored to your clients.",
+      title: "Instrumente digitale pentru nutriționiști",
+      desc: "Jurnale de nutriție, dashboard-uri de progres și conținut psiho-educațional, adaptate stilului tău de lucru.",
     },
     {
-      title: "White-label Solutions",
-      desc: "Apps and web platforms under your own brand, based on evidence-based psychology and nutrition.",
+      title: "Soluții white-label",
+      desc: "Aplicații și platforme web sub brandul tău, bazate pe psihologie și nutriție validate științific.",
     },
   ],
 };
@@ -113,7 +114,7 @@ function Header() {
               App4Mind
             </div>
             <div className="text-xs text-slate-400">
-              Applications for Mind, Emotions & Nutrition
+              Psihoterapie · Nutriție · Aplicații pentru minte
             </div>
           </div>
         </motion.div>
@@ -124,12 +125,12 @@ function Header() {
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
         >
-          <HeaderLink href="#home" label="Home" />
-          <HeaderLink href="#applications" label="Applications" />
-          <HeaderLink href="#tutorials" label="Tutorials" />
-          <HeaderLink href="#professionals" label="For Professionals" />
-          <HeaderLink href="#about" label="About" />
-          <HeaderLink href="#contact" label="Contact" />
+          <HeaderLink href="#home" label="Acasă" />
+          <HeaderLink href="#applications" label="Instrumente & aplicații" />
+          <HeaderLink href="#tutorials" label="Programe ghidate" />
+          <HeaderLink href="#professionals" label="Pentru profesioniști" />
+          <HeaderLink href="#about" label="Despre mine" />
+          <HeaderLink href="#contact" label="Programări" />
         </motion.nav>
 
         {/* Profile + CTA */}
@@ -138,9 +139,8 @@ function Header() {
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
         >
-          {/* imagine rotundă – aici pui <img src="..." /> */}
+          {/* imagine rotundă */}
           <div className="h-10 w-10 overflow-hidden rounded-full border border-cyan-400/70 bg-gradient-to-br from-slate-700 to-slate-900 shadow-md shadow-cyan-500/40">
-            {/* Placeholder cu inițiale */}
             <div className="flex h-full w-full items-center justify-center text-xs font-semibold text-slate-50">
               <div
                 className="w-full h-full bg-cover bg-center bg-no-repeat rounded-3xl shadow-xl"
@@ -153,14 +153,14 @@ function Header() {
               Roșu Adrian-Francois
             </div>
             <div className="text-[11px] text-slate-400">
-              CBT Psychotherapist · Nutritionist · IT Developer
+              Psihoterapeut CBT · Nutriționist · Dezvoltator IT
             </div>
           </div>
           <a
             href="#contact"
             className="hidden rounded-full bg-gradient-to-r from-cyan-500 to-emerald-500 px-3 py-1.5 text-xs font-semibold text-slate-950 shadow-lg shadow-cyan-500/40 hover:brightness-110 md:inline-block"
           >
-            Book a session
+            Programează o ședință
           </a>
         </motion.div>
       </div>
@@ -195,56 +195,57 @@ function Hero() {
           className="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-900/70 px-3 py-1 text-[11px] text-slate-300 shadow-sm shadow-slate-900/80"
         >
           <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-          Psychology · CBT · Nutrition · IT
+          Psihoterapie · CBT · Nutriție · Instrumente digitale
         </motion.div>
 
         <motion.h1
           variants={fadeUp}
           className="text-3xl font-semibold tracking-tight text-slate-50 md:text-4xl lg:text-5xl"
         >
-          Interactive{" "}
+          Psihoterapie și nutriție{" "}
           <span className="bg-gradient-to-r from-cyan-400 via-emerald-400 to-indigo-400 bg-clip-text text-transparent">
-            Applications for Mind
+            integrate cu aplicații interactive
           </span>{" "}
-          designed by a CBT psychotherapist, nutritionist & IT developer.
+          create de același specialist.
         </motion.h1>
 
         <motion.p
           variants={fadeUp}
           className="max-w-xl text-sm leading-relaxed text-slate-300 md:text-base"
         >
-          Follow structured web-based tutorials, emotional and nutrition
-          journals, CBT exercises, mini games and interactive articles – just
-          like a Udemy course, but focused on your mental health and lifestyle.
+          Lucrez cu anxietate, depresie, atacuri de panică, tulburări alimentare
+          și mâncat emoțional, îmbinând psihoterapia cognitiv-comportamentală
+          (CBT) cu consilierea nutrițională și cu instrumente online: jurnale,
+          exerciții, mini-jocuri și tutoriale structurate.
         </motion.p>
 
         <motion.div
           variants={fadeUp}
           className="flex flex-wrap items-center gap-3"
         >
-          <a
-            href="#applications"
+          <Link
+            to="/psihoterapie"
             className="rounded-full bg-gradient-to-r from-cyan-500 to-emerald-500 px-5 py-2 text-sm font-semibold text-slate-950 shadow-lg shadow-cyan-500/40 hover:brightness-110"
           >
-            Explore applications
-          </a>
-          <a
-            href="#tutorials"
+            Programează o consultație
+          </Link>
+          <Link
+            to="/nutritie"
             className="rounded-full border border-slate-600 bg-slate-900/60 px-5 py-2 text-sm font-semibold text-slate-100 hover:border-cyan-400 hover:text-cyan-200"
           >
-            View tutorials
-          </a>
+            Vezi programele de nutriție
+          </Link>
         </motion.div>
 
         <motion.div
           variants={fadeUp}
           className="flex flex-wrap gap-2 text-[11px] text-slate-300"
         >
-          <Tag>Emotional journals</Tag>
-          <Tag>Automatic thoughts</Tag>
-          <Tag>Nutrition tracking</Tag>
-          <Tag>CBT mini games</Tag>
-          <Tag>Interactive articles</Tag>
+          <Tag>Anxietate & atacuri de panică</Tag>
+          <Tag>Depresie & stres cronic</Tag>
+          <Tag>Mâncat emoțional & tulburări alimentare</Tag>
+          <Tag>Jurnale CBT și mini-jocuri</Tag>
+          <Tag>Ședințe online & față în față</Tag>
         </motion.div>
       </motion.div>
 
@@ -261,40 +262,41 @@ function Hero() {
             whileHover={{ y: -6 }}
           >
             <div className="mb-3 flex items-center justify-between text-xs text-slate-300">
-              <span className="font-semibold">App4Mind Dashboard</span>
+              <span className="font-semibold">Panoul App4Mind</span>
               <span className="rounded-full bg-slate-800 px-2 py-0.5 text-[10px] text-cyan-300">
-                Live prototype
+                Prototip live
               </span>
             </div>
 
             <div className="grid grid-cols-2 gap-3 text-xs">
               <PreviewCard
-                title="Emotional Journal"
+                title="Jurnalul emoțiilor"
                 pill="CBT"
                 gradient="from-rose-500/80 to-orange-400/80"
               />
               <PreviewCard
-                title="Automatic Thoughts"
-                pill="Cognitive"
+                title="Gânduri automate"
+                pill="Cognitiv"
                 gradient="from-cyan-500/80 to-emerald-400/80"
               />
               <PreviewCard
-                title="Nutrition Diary"
+                title="Jurnal de nutriție"
                 pill="Food & Mood"
                 gradient="from-amber-400/80 to-lime-400/80"
               />
               <PreviewCard
-                title="Mini Games"
+                title="Mini-jocuri CBT"
                 pill="Play & Learn"
                 gradient="from-indigo-400/80 to-fuchsia-500/80"
               />
             </div>
 
             <div className="mt-4 rounded-2xl bg-slate-900/80 p-3 text-[11px] text-slate-300">
-              Designed for:
+              Create pentru:
               <span className="ml-1 text-cyan-300">
-                people seeking help, clients in therapy, and professionals who
-                want their own platforms.
+                persoane care vor să-și lucreze emoțiile, clienți aflați în
+                terapie și profesioniști care doresc instrumente moderne pentru
+                practică.
               </span>
             </div>
           </motion.div>
@@ -307,13 +309,13 @@ function Hero() {
             transition={{ delay: 0.3 }}
           >
             <div className="mb-1 text-[10px] uppercase tracking-wide text-slate-400">
-              For therapists
+              Pentru terapie
             </div>
             <div className="font-semibold text-cyan-200">
-              Custom CBT & nutrition platforms
+              Jurnale CBT & psihonutriție
             </div>
             <div className="mt-1 text-[10px] text-slate-400">
-              I build interactive tools for your clients, under your brand.
+              Exerciții clare între ședințe, pentru progres real.
             </div>
           </motion.div>
 
@@ -325,13 +327,14 @@ function Hero() {
             transition={{ delay: 0.4 }}
           >
             <div className="text-[10px] uppercase tracking-wide text-slate-400">
-              New
+              Nou
             </div>
             <div className="font-semibold text-emerald-300">
-              Web-based tutorials
+              Tutoriale web ghidate
             </div>
             <div className="mt-1 text-[10px] text-slate-400">
-              Step-by-step programs like Udemy, but for your mind & body.
+              Ca un curs online, dar pentru anxietate, depresie și relația cu
+              mâncarea.
             </div>
           </motion.div>
         </div>
@@ -403,9 +406,9 @@ function ApplicationsSection() {
   return (
     <SectionWrapper
       id="applications"
-      eyebrow="Applications"
-      title="Web tools that combine psychology, CBT and nutrition"
-      subtitle="Use journals, trackers, quizzes and mini games to work on your thoughts, emotions and lifestyle in a structured way."
+      eyebrow="Instrumente & Aplicații"
+      title="Instrumente online care combină psihoterapia și nutriția"
+      subtitle="Poți folosi jurnale, trackere, quiz-uri și mini-jocuri pentru a lucra structurat cu gândurile, emoțiile și obiceiurile tale."
     >
       <motion.div
         className="grid gap-5 md:grid-cols-2 lg:grid-cols-4"
@@ -424,7 +427,7 @@ function ApplicationsSection() {
               <div className="text-xs font-semibold text-cyan-300">
                 {item.tag}
               </div>
-              <div className="h-6 w-6 rounded-full bg-slate-900/80 text-[10px] text-slate-400 group-hover:text-cyan-200 flex items-center justify-center">
+              <div className="flex h-6 w-6 items-center justify-center rounded-full bg-slate-900/80 text-[10px] text-slate-400 group-hover:text-cyan-200">
                 ▶
               </div>
             </div>
@@ -443,9 +446,9 @@ function TutorialsSection() {
   return (
     <SectionWrapper
       id="tutorials"
-      eyebrow="Tutorials"
-      title="Follow structured programs like an online course"
-      subtitle="Tutorials built on web pages, with explanations and exercises you can follow step-by-step, just like Max and Jonas do with React – but focused on CBT and nutrition."
+      eyebrow="Programe ghidate"
+      title="Programe pe care le parcurgi pas cu pas, ca un curs online"
+      subtitle="Explicații, exemple și exerciții pe pagini web structurate – la fel cum vezi în cursurile de React, dar aplicate pe anxietate, depresie și relația cu mâncarea."
     >
       <motion.div
         className="grid gap-5 md:grid-cols-3"
@@ -471,9 +474,9 @@ function TutorialsSection() {
               <div className="text-xs text-slate-300">{tut.desc}</div>
             </div>
             <button className="mt-4 inline-flex items-center justify-between rounded-2xl border border-slate-700 bg-slate-950/80 px-3 py-2 text-[11px] font-semibold text-cyan-200 hover:border-cyan-400 hover:text-cyan-100">
-              View curriculum
+              Vezi structura programului
               <span className="text-xs">
-                {index === 0 ? "Start here" : "Coming soon"}
+                {index === 0 ? "Disponibil" : "În curând"}
               </span>
             </button>
           </motion.div>
@@ -487,9 +490,9 @@ function ProfessionalsSection() {
   return (
     <SectionWrapper
       id="professionals"
-      eyebrow="For Professionals"
-      title="Platforms for psychologists & nutritionists"
-      subtitle="If you are a psychologist or nutritionist, I can create custom interactive platforms for your clients – with CBT tools, journals, quizzes and psycho-educational content."
+      eyebrow="Pentru profesioniști"
+      title="Platforme pentru psihologi și nutriționiști"
+      subtitle="Dacă ești psiholog sau nutriționist, îți pot crea platforme interactive pentru clienți – cu jurnale CBT, quiz-uri, teste, minijocuri și conținut educativ."
     >
       <motion.div
         className="grid gap-5 md:grid-cols-3"
@@ -511,7 +514,7 @@ function ProfessionalsSection() {
               <p className="text-xs text-slate-300">{item.desc}</p>
             </div>
             <div className="mt-4 text-[11px] text-cyan-300">
-              • Custom design • CBT content • Flexible structure
+              • Design personalizat • Conținut CBT • Structură flexibilă
             </div>
           </motion.div>
         ))}
@@ -524,9 +527,9 @@ function AboutSection() {
   return (
     <SectionWrapper
       id="about"
-      eyebrow="About"
-      title="About the creator"
-      subtitle="App4Mind is created by a professional who combines psychology, nutrition and IT in one integrated approach."
+      eyebrow="Despre mine"
+      title="Cine este în spatele App4Mind"
+      subtitle="Îmbin psihologia, psihoterapia cognitiv-comportamentală, nutriția și dezvoltarea de aplicații pentru a crea intervenții cât mai practice."
     >
       <motion.div
         className="mx-auto flex max-w-3xl flex-col items-center gap-6 rounded-3xl border border-slate-800 bg-slate-950/80 p-6 text-sm shadow-xl shadow-slate-950/80 md:flex-row"
@@ -553,7 +556,7 @@ function AboutSection() {
               Roșu Adrian-Francois
             </div>
             <div className="text-xs text-slate-400">
-              CBT Psychotherapist · Nutritionist · IT Developer
+              Psihoterapeut CBT · Psiholog · Nutriționist · Dezvoltator IT
             </div>
           </div>
         </motion.div>
@@ -563,22 +566,21 @@ function AboutSection() {
           className="space-y-3 text-xs text-slate-300 md:text-sm"
         >
           <p>
-            I have over 10 years of studies and experience across psychology,
-            cognitive-behavioral psychotherapy, nutrition and software
-            development. My work integrates CBT principles, health behavior and
-            modern web technologies.
+            Am peste 10 ani de experiență în psihologie, psihoterapie
+            cognitiv-comportamentală, nutriție și dezvoltare de aplicații.
+            Integrez principiile CBT, schimbarea comportamentală și tehnologia
+            modernă pentru a crea intervenții clare și structurate.
           </p>
           <p>
-            Through App4Mind, I create interactive tools, tutorials and
-            platforms that help people understand their thoughts and emotions,
-            change unhelpful patterns and build healthier lifestyles. The same
-            tools can be adapted for therapists and nutritionists who want to
-            bring more technology into their practice.
+            Prin App4Mind, ofer atât ședințe clasice de psihoterapie și
+            consiliere nutrițională, cât și instrumente interactive – jurnale,
+            exerciții, quiz-uri și mini-jocuri – pe care clienții le pot folosi
+            între ședințe sau independent.
           </p>
           <p>
-            My goal is to make psychology and nutrition not only understandable,
-            but also practical and engaging – with clear exercises, structured
-            flows and dynamic web experiences.
+            Scopul meu este să fac psihologia și nutriția ușor de înțeles, dar
+            mai ales aplicabile în viața de zi cu zi: cu pași concreți, exemple,
+            analogii și experiențe web dinamice.
           </p>
         </motion.div>
       </motion.div>
@@ -590,9 +592,9 @@ function ContactSection() {
   return (
     <SectionWrapper
       id="contact"
-      eyebrow="Contact"
-      title="Ready to start or collaborate?"
-      subtitle="Whether you need psychotherapy, nutrition counseling, structured tutorials or a custom platform for your clients, you can reach out and we will design something that fits your needs."
+      eyebrow="Programări & colaborări"
+      title="Vrei să începem sau să colaborăm?"
+      subtitle="Poți apela la mine atât pentru psihoterapie și consiliere nutrițională, cât și pentru crearea de instrumente digitale și platforme pentru practică."
     >
       <motion.div
         className="mx-auto max-w-xl rounded-3xl border border-slate-800 bg-slate-950/80 p-6 text-sm shadow-xl shadow-slate-950/80"
@@ -603,14 +605,18 @@ function ContactSection() {
       >
         <motion.div variants={fadeUp} className="space-y-3 text-xs md:text-sm">
           <p className="text-slate-300">
-            You can use this section later for a real contact form, calendar
-            link or WhatsApp / email button. For now, you can add simple links:
+            Secțiunea aceasta poate fi transformată ulterior într-un formular de
+            contact sau într-un link direct către calendarul tău. Pentru moment,
+            poți folosi date de contact simple:
           </p>
           <ul className="space-y-1 text-cyan-300">
-            <li>• Email: your-email@example.com</li>
-            <li>• Website: www.app4mind.com</li>
-            <li>• Psychology & nutrition sessions – online & in person</li>
-            <li>• Custom web platforms for psychologists and nutritionists</li>
+            <li>• Email: psihoterapiieficiente@gmail.com</li>
+            <li>• Telefon / WhatsApp: 0723 179 552</li>
+            <li>• Ședințe: online și față în față, în București</li>
+            <li>
+              • Colaborări: platforme și aplicații pentru psihologi și
+              nutriționiști
+            </li>
           </ul>
         </motion.div>
 
@@ -619,16 +625,16 @@ function ContactSection() {
           className="mt-5 flex flex-wrap gap-3 text-xs"
         >
           <a
-            href="#"
+            href="mailto:adresa-ta@exemplu.ro"
             className="rounded-full bg-gradient-to-r from-cyan-500 to-emerald-500 px-5 py-2 font-semibold text-slate-950 shadow-lg shadow-cyan-500/40 hover:brightness-110"
           >
-            Request a therapy session
+            Programează o ședință de psihoterapie
           </a>
           <a
-            href="#"
+            href="#professionals"
             className="rounded-full border border-slate-700 bg-slate-900/80 px-5 py-2 font-semibold text-slate-100 hover:border-cyan-400 hover:text-cyan-200"
           >
-            Ask for a custom platform
+            Solicită o platformă personalizată
           </a>
         </motion.div>
       </motion.div>
@@ -641,11 +647,11 @@ function Footer() {
     <footer className="border-t border-slate-800/80 bg-slate-950/90">
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 px-4 py-5 text-[11px] text-slate-400 md:flex-row">
         <div>
-          © {new Date().getFullYear()} App4Mind – Created by Roșu
-          Adrian-Francois. Psychology · CBT · Nutrition · IT.
+          © {new Date().getFullYear()} App4Mind – Roșu Adrian-Francois.
+          Psihoterapie · CBT · Nutriție · IT.
         </div>
         <div className="flex flex-wrap items-center gap-2">
-          <span>Based on science. Built with React.</span>
+          <span>Bazat pe știință. Construit în React.</span>
         </div>
       </div>
     </footer>
