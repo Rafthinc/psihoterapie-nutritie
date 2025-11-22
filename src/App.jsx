@@ -20,13 +20,15 @@ const sections = {
   applications: [
     {
       title: "Jurnalul emoțiilor",
-      desc: "Notezi emoțiile, situațiile declanșatoare și gândurile automate, într-un format structurat, inspirat din CBT.",
+      desc: "Notezi emoțiile și situațiile declanșatoare, într-un format structurat, inspirat din Psihoterapia Cognitiv Comportamentală.",
       tag: "Psihoterapie CBT",
+      link: "https://emotion-app-landing.vercel.app/",
     },
     {
       title: "Monitorizarea gândurilor automate",
-      desc: "Identifici și etichetezi distorsiunile cognitive și exersezi alternative mai realiste și mai blânde.",
+      desc: "Identifici și etichetezi distorsiunile cognitive și exersezi alternative mai realiste și mai raționale.",
       tag: "Restructurare cognitivă",
+      link: "https://intro-section-2-nine.vercel.app/",
     },
     {
       title: "Jurnal de nutriție & stare",
@@ -44,6 +46,7 @@ const sections = {
       level: "Începători",
       title: "Înțelege-ți mintea și emoțiile",
       desc: "Lecții interactive despre gânduri, emoții și comportamente, cu exerciții simple pe care le poți aplica imediat.",
+      link: "https://emotion-app-landing.vercel.app/",
     },
     {
       level: "Intermediar",
@@ -423,18 +426,20 @@ function ApplicationsSection() {
             variants={fadeUp}
             className="group flex flex-col justify-between rounded-3xl border border-slate-800 bg-slate-950/70 p-4 text-sm shadow-lg shadow-slate-950/70 transition hover:-translate-y-1 hover:border-cyan-400/70 hover:shadow-cyan-500/30"
           >
-            <div className="mb-3 flex items-center justify-between">
-              <div className="text-xs font-semibold text-cyan-300">
-                {item.tag}
+            <a href={item.link} target="_blank" rel="noopener noreferrer">
+              <div className="mb-3 flex items-center justify-between">
+                <div className="text-xs font-semibold text-cyan-300">
+                  {item.tag}
+                </div>
+                <div className="flex h-6 w-6 items-center justify-center rounded-full bg-slate-900/80 text-[10px] text-slate-400 group-hover:text-cyan-200">
+                  ▶
+                </div>
               </div>
-              <div className="flex h-6 w-6 items-center justify-center rounded-full bg-slate-900/80 text-[10px] text-slate-400 group-hover:text-cyan-200">
-                ▶
+              <div className="mb-2 text-sm font-semibold text-slate-50">
+                {item.title}
               </div>
-            </div>
-            <div className="mb-2 text-sm font-semibold text-slate-50">
-              {item.title}
-            </div>
-            <div className="text-xs text-slate-300">{item.desc}</div>
+              <div className="text-xs text-slate-300">{item.desc}</div>
+            </a>
           </motion.div>
         ))}
       </motion.div>
@@ -473,8 +478,11 @@ function TutorialsSection() {
               </div>
               <div className="text-xs text-slate-300">{tut.desc}</div>
             </div>
+
             <button className="mt-4 inline-flex items-center justify-between rounded-2xl border border-slate-700 bg-slate-950/80 px-3 py-2 text-[11px] font-semibold text-cyan-200 hover:border-cyan-400 hover:text-cyan-100">
-              Vezi structura programului
+              <a href={tut.link} target="_blank" rel="noopener noreferrer">
+                Vezi structura programului
+              </a>
               <span className="text-xs">
                 {index === 0 ? "Disponibil" : "În curând"}
               </span>
@@ -567,9 +575,9 @@ function AboutSection() {
         >
           <p>
             Am peste 10 ani de experiență în psihologie, psihoterapie
-            cognitiv-comportamentală, nutriție și dezvoltare de aplicații.
-            Integrez principiile CBT, schimbarea comportamentală și tehnologia
-            modernă pentru a crea intervenții clare și structurate.
+            cognitiv-comportamentală, nutriție și peste 15 ani în dezvoltare de
+            aplicații. Integrez principiile CBT, schimbarea comportamentală și
+            tehnologia modernă pentru a crea intervenții clare și structurate.
           </p>
           <p>
             Prin App4Mind, ofer atât ședințe clasice de psihoterapie și
